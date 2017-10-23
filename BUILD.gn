@@ -1,0 +1,14 @@
+config("sqlitecpp_config") {
+  include_dirs = [ "include" ]
+}
+
+static_library("sqlitecpp") {
+  sources = [
+    "src/Backup.cpp",
+    "src/Column.cpp",
+    "src/Database.cpp",
+    "src/Statement.cpp",
+    "src/Transaction.cpp",
+  ]
+  public_configs = [ ":sqlitecpp_config" ]
+}
