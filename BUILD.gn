@@ -1,5 +1,6 @@
 config("sqlitecpp_config") {
   include_dirs = [ "include" ]
+  libs = [ "sqlite3" ]
 }
 
 static_library("sqlitecpp") {
@@ -13,14 +14,11 @@ static_library("sqlitecpp") {
   public_configs = [ ":sqlitecpp_config" ]
 }
 
-executable("example1") {
-  sources = [
-    "examples/example1/main.cpp",
-  ]
-  libs = [
-    "sqlite3",
-  ]
-  deps = [
-    ":sqlitecpp",
-  ]
-}
+#executable("example1") {
+#  sources = [
+#    "examples/example1/main.cpp",
+#  ]
+#  deps = [
+#    ":sqlitecpp",
+#  ]
+#}
