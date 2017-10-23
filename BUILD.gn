@@ -12,3 +12,15 @@ static_library("sqlitecpp") {
   ]
   public_configs = [ ":sqlitecpp_config" ]
 }
+
+executable("example1") {
+  sources = [
+    "examples/example1/main.cpp",
+  ]
+  libs = [
+    "sqlite3",
+  ]
+  deps = [
+    ":sqlitecpp",
+  ]
+}
